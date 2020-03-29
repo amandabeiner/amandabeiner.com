@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.background {
+  background: none;
+
+}
+
+@media (min-width: 1280px) {
+  .background {
+    background-image: url("./headshot.png");
+  }
+}

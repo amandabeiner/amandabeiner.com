@@ -1,10 +1,21 @@
 {
   "name": "personal-site",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Amanda Beiner <aebeiner@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "tailwindcss": "^1.2.0"
+  },
+  "scripts": {
+    "build-css": "npx tailwind build public/main.css -o public/output.css",
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss public/tailwind.css -o public/build/tailwind.css --watch\"  \"live-server ./public\"",
+    "start": "yarn run serve"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^7.1.0"
   }
 }
